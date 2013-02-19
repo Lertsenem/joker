@@ -1,0 +1,11 @@
+<rule name="distribute">
+	<params>
+		<param name="sources" type="decks"/>
+		<param name="targets" type="decks"/>
+	</params>
+	<actions>
+		<loop>
+			<move source="sources[0][0]" target="targets[0][0]" orientation="targets[0].defaultOrientation" inclination="targets[0].defaultInclination"/>
+		</loop>
+	</actions>
+</rule>

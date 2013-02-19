@@ -1,0 +1,32 @@
+<game name="Bataille">
+	<materials>
+		<players>
+			<player name="JoueurA" type="human"/>
+			<player name="JoueurB" type="human"/>
+			<player name="GameMaster" type="auto"/>
+		</players>
+		<cards>
+		</cards>
+		<zones>
+			<zone name="ZoneA" visible="JoueurA"/>
+			<zone name="ZoneB" visible="JoueurB"/>
+			<zone name="ZoneC" visible="JoueurA,JoueurB"/>
+		</zones>
+		<decks>
+			<deck name="MainA" zone="ZoneA" description="La main du Joueur A"/>
+			<deck name="PaquetA" zone="ZoneC" defaultOrientation="hidden"/>
+			<deck name="BattlefieldA" zone="ZoneC"/>
+			<deck name="MainB" zone="ZoneB"/>
+			<deck name="PaquetB" zone="ZoneC" defaultOrientation="hidden"/>
+			<deck name="BattlefieldB" zone="ZoneC"/>
+		</decks>
+	</materials>
+	<rules>
+		<setup>
+			<action player="GameMaster" action="shuffle" targets="RootDeck"/>
+			<action player="GameMaster" action="distribute" sources="RootDeck" targets="PaquetA,PaquetB"/>
+		</setup>
+		<loop>
+		</loop>
+	</rules>
+</game>
