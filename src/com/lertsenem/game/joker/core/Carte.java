@@ -9,7 +9,7 @@ import java.util.HashMap;
 /**
  * The <code>Carte</code> class, modelling a <strong>card</strong>.
  */
-class Carte()
+public class Carte implements Resources
 {
 	// ##################################################### //	
 	// PROPERTIES
@@ -113,8 +113,13 @@ class Carte()
 	 *
 	 * @param id the new id to set
 	 */
-	private void setId( Identifiant id )
+	public void setId( Identifiant id )
 	{
+		if (this.id != null)
+		{
+			return;
+		}
+
 		this.id = id;
 		return;
 	}
