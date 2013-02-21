@@ -9,15 +9,11 @@ import java.util.HashMap;
 /**
  * The <code>Carte</code> class, modelling a <strong>card</strong>.
  */
-public class Carte implements Resources
+public class Carte extends Resources
 {
 	// ##################################################### //	
 	// PROPERTIES
 	// ##################################################### //	
-	/**
-	 * Unique identifier for the <code>Carte</code>.
-	 */
-	private Identifiant id;
 	
 	/**
 	 * <code>Orientation</code> of the <code>Carte</code>
@@ -34,17 +30,6 @@ public class Carte implements Resources
 	 */
 	private Paquet paquet;
 
-	/**
-	 * The <code>Hashmap</code> containing the <strong>literal</strong> properties of the <code>Carte</code>
-	 */
-	private HashMap<String,String> proprietesLitterales;
-
-	/**
-	 * The <code>Hashmap</code> containing the <strong>numeric</strong> properties of the <code>Carte</code>
-	 */
-	private HashMap<String,String> proprietesNumeriques;
-
-
 	// ##################################################### //	
 	// METHODS
 	// ##################################################### //	
@@ -54,7 +39,7 @@ public class Carte implements Resources
 	 */
 	public Carte(Identifiant id, Paquet paquet)
 	{
-		this.id = id;
+		this.setId(id);
 
 		this.paquet = paquet;
 
@@ -65,16 +50,6 @@ public class Carte implements Resources
 	// ===================================================== //	
 	// Getters
 	// ===================================================== //	
-	/**
-	 * Getter for <code>id</code>.
-	 *
-	 * @return id
-	 */
-	public Identifiant getId()
-	{
-		return id;
-	}
-
 	/**
 	 * Getter for <code>orientation</code>.
 	 *
@@ -108,22 +83,6 @@ public class Carte implements Resources
 	// ===================================================== //	
 	// Setters
 	// ===================================================== //
-	/**
-	 * Setter for id
-	 *
-	 * @param id the new id to set
-	 */
-	public void setId( Identifiant id )
-	{
-		if (this.id != null)
-		{
-			return;
-		}
-
-		this.id = id;
-		return;
-	}
-	
 	/**
 	 * Setter for orientation.
 	 *
